@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<link>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Form</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <section class="form-section">
+        <div class="form-container">
+            <h2>Form</h2>
+            <form id="submitForm">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Enter your username" required>
+                </div>
+                <div class="form-group">
+                    <label for="score">Score</label>
+                    <input type="number" id="score" name="score" placeholder="Enter your score" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    <small class="email-err" style="display: none; color: red;">The email is already in use.</small>
+                </div>
+                <div class="form-group">
+                    <button type="submit" id="postSubmit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </section>
+</body>
+<script src="./formSubmit.js"></script>
+
+</html>
