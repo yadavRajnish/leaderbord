@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dashbord</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <section class="dashboard-section">
+        <div class="dashboard-container">
+            <div class="logo">
+                <img src="../img/LOGO.png" alt="">
+            </div>
+
+            <div id="players" class="players">
+                <div class="player">
+                    <div>Pos</div>
+                    <div>Name</div>
+                    <div>Date</div>
+                    <div>Laptime</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const api = 'http://195.250.20.169:3000/api/user/get-all-users';
+        const players = document.getElementById('players');
+
+        fetch(api)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                const sortUsers = data.data;
+                // const sortUser = data.data.sort((a, b) => b.score - a.score)
+                sortUsers.forEach((user, i) => {
+                    const row = document.createElement('div');
+                    row.classList.add("player");
+                    row.innerHTML = `
+                        <div>${i + 1}</div>
+                        <div>${user.username}</div>
+                        <div>${new Date(user.createdAt).toLocaleDateString()}</div>
+                        <div>11:11:00</div>
+                    `;
+                    players.appendChild(row);
+                });
+            })
+            .catch(error => {
+                console.error('There was a problem with the fetch operation:', error);
+            });
+
+    </script>
+</body>
+
+</html>

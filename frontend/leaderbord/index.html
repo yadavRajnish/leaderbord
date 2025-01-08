@@ -1,27 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>dashbord</title>
-    <link rel="stylesheet" href="../style.css">
+<link>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Form</title>
+<link rel="stylesheet" href="../style.css">
 </head>
 
 <body>
-    <section class="dashboard-section">
-        <div class="dashboard-container">
+    <section class="form-section">
+        <div class="form-container">
             <div class="logo">
                 <img src="../img/LOGO.png" alt="">
             </div>
 
-            <div id="players" class="players">
-                <div class="player">
-                    <div>Pos</div>
-                    <div>Name</div>
-                    <div>Date</div>
-                    <div>Laptime</div>
-                </div>
+            <p class="head leaderboard-head">feel the thrill of team boss</p>
+            <div class="form-img">
+                <img src="../img/1.png" alt="">
+            </div>
+            <div class="form-group leaderboard-button">
+                <button type="submit" id="navigateToDashbord">leaderboard</button>
             </div>
         </div>
     </section>
@@ -58,6 +57,16 @@
                 // errorMessage.innerHTML = `<td colspan="3" style="text-align: center; color: red;">Failed to load data</td>`;
                 // tbody.appendChild(errorMessage);
             });
+
+    </script>
+    <script>
+
+        const navigateToDashbord = document.getElementById("navigateToDashbord");
+
+        navigateToDashbord.addEventListener("click", (e) => {
+            e.preventDefault();
+            window.location.href = "http://127.0.0.1:5500/frontend/leaderbord/dashbord.html";
+        })
 
     </script>
 </body>
