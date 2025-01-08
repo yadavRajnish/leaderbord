@@ -1,8 +1,10 @@
+const { HOST, USER, PASSWORD, DB } = process.env;
+
 export default {
-  HOST: "localhost",
-  USER: "root",
-  PASSWORD: "root",
-  DB: "leaderbord",
+  HOST,
+  USER,
+  PASSWORD,
+  DB,
   dialect: "mysql",
   pool: {
     max: 5,

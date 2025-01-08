@@ -2,6 +2,10 @@ import dbConfig from "../config/db.config";
 import { Sequelize, DataTypes, Dialect } from "sequelize";
 import initUserModel from "./user.model";
 
+if (!dbConfig.DB || !dbConfig.USER) {
+  throw new Error("Specify DB Credentials")
+}
+
 const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
   host: dbConfig.HOST,
   dialect: dbConfig.dialect as Dialect,
