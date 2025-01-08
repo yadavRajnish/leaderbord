@@ -146,6 +146,7 @@ body {
 }
 
 @media (max-width: 768px) {
+
   .form-group input,
   .form-group button {
     font-size: 14px;
@@ -191,7 +192,7 @@ body {
   color: black;
 }
 
-.player > div {
+.player>div {
   width: calc((100% - 3rem) / 3);
 }
 
@@ -306,7 +307,6 @@ tr:hover {
   background: transparent;
   border: none;
   border-bottom: 1px solid white;
-  outline: none;
   color: white;
   text-align: center;
 }
@@ -326,6 +326,7 @@ input[type="number"]::-webkit-outer-spin-button {
 .leaderboard-button {
   margin-top: 30px;
 }
+
 .leaderboard-head {
   margin: 30px 0;
 }
