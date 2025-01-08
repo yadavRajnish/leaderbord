@@ -17,7 +17,9 @@ export const addUSer = async (req: Request, res: Response): Promise<void> => {
 //get all the users
 export const getAllUsers = async (req: Request, res: Response): Promise<void> => {
   try {
-    const data = await User.findAll();
+    const data = await User.findAll({
+      limit: 10
+    });
     res.status(200).json({
       data: data,
       message: "User retrieved successfully",
