@@ -1,10 +1,8 @@
-const { HOST, USER, PASSWORD, DB } = process.env;
-
 export default {
-  HOST,
-  USER,
-  PASSWORD,
-  DB,
+  HOST: "195.250.20.169",
+  USER: "mintlabs",
+  PASSWORD: "mintlabs",
+  DB: "aramco",
   dialect: "mysql",
   pool: {
     max: 5,

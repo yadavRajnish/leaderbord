@@ -33,12 +33,7 @@ const db: {
   user: ReturnType<typeof initUserModel>
 } = { Sequelize, sequelize, user: initUserModel(sequelize) };
 
-// db.Sequelize = Sequelize;
-// db.sequelize = sequelize;
-
-// db.user = initUserModel(sequelize, DataTypes);
-
-db.sequelize.sync({ force: false, alter: true }).then(() => {
+db.sequelize.sync({ force: false, alter: false }).then(() => {
   console.log("re-sync database!");
 });
 
