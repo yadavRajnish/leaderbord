@@ -32,11 +32,29 @@
             </form>
             <form style="display: none;" id="laptime">
                 <div class="laptime-container">
-                    <input autofocus type="number" step="1" id="laptime" name="min" placeholder="MM" required>
+                    <div style="position: relative;">
+                        <input autofocus type="number" step="1" name="min" required data-type="time"
+                            style="color: transparent;">
+                        <label
+                            style="position: absolute; inset: 0; color: white; text-align: center; pointer-events: none;"
+                            for="min">00</label>
+                    </div>
                     <span>:</span>
-                    <input type="number" step="1" id="laptime" name="sec" placeholder="SS" required>
+                    <div style="position: relative;">
+                        <input autofocus type="number" step="1" name="sec" required data-type="time"
+                            style="color: transparent;">
+                        <label
+                            style="position: absolute; inset: 0; color: white; text-align: center; pointer-events: none;"
+                            for="sec">00</label>
+                    </div>
                     <span>:</span>
-                    <input type="number" step="1" id="laptime" name="ms" placeholder="MS" required>
+                    <div style="position: relative;">
+                        <input autofocus type="number" step="1" name="ms" required data-type="time"
+                            style="color: transparent;" data-pad-length="3">
+                        <label
+                            style="position: absolute; inset: 0; color: white; text-align: center; pointer-events: none;"
+                            for="ms">00</label>
+                    </div>
                 </div>
                 <div class="form-group">
                     <button type="submit" id="postSubmit">submit</button>
@@ -48,6 +66,14 @@
         </div>
     </section>
 </body>
+<script>
+    document.querySelectorAll("input[data-type=time]").forEach(el => {
+        el.addEventListener("input", (e) => {
+            const padding = el.getAttribute("data-pad-length") || 2;
+            document.querySelector(`label[for=${el.name}]`).innerText = e.target.value.padStart(padding, 0);
+        })
+    })
+</script>
 <script src="./formSubmit.js"></script>
 
 </html>
