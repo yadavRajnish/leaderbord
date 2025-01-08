@@ -3,7 +3,7 @@ import { DataTypes, Model, Optional, Sequelize } from "sequelize";
 export interface UserAttributes {
   id?: number,
   username: string,
-  score: number,
+  phone: string,
   email: string
 }
 
@@ -15,7 +15,7 @@ export default (sequelize: Sequelize) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    score: {
+    phone: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },

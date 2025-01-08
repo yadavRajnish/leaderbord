@@ -5,7 +5,6 @@ const User = db.user;
 // create a User
 export const addUSer = async (req: Request, res: Response): Promise<void> => {
   try {
-
     const existingUser = await User.findOne({ where: { email: req.body.email } });
     if (existingUser) {
       res.status(400).send({
