@@ -6,13 +6,16 @@ formSubmit.addEventListener("submit", async function (e) {
   const formData = new FormData(formSubmit).entries();
 
   try {
-    const response = await fetch("http://195.250.20.169:3000/api/user/add-user", {
-      method: "POST",
-      headers: {
-        "Content-type": "application/json",
-      },
-      body: JSON.stringify(Object.fromEntries(formData)),
-    });
+    const response = await fetch(
+      "http://195.250.20.169:3000/api/user/add-user",
+      {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify(Object.fromEntries(formData)),
+      }
+    );
     if (!response.ok) {
       const result = await response.json();
       if (result.message === "The email is already in use.") {
@@ -26,6 +29,7 @@ formSubmit.addEventListener("submit", async function (e) {
     window.alert("User added successfully!");
     formSubmit.reset();
     emailError.style.display = "none";
+    window.location.href = "http://127.0.0.1:5500/frontend/form/laptime.html";
 
     console.log(result);
   } catch (error) {
