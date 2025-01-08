@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 import userRouter from "./routes/user.router";
+import gameRouter from "./routes/game.router";
 
 const app = express();
 const PORT = 3000;
@@ -13,3 +14,4 @@ app.listen(PORT, () => {
 });
 
 app.use("/api/user", userRouter);
+// app.use("/api/game", gameRouter);
