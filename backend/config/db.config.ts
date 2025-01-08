@@ -1,8 +1,8 @@
 export default {
-  HOST: "localhost",
-  USER: "root",
-  PASSWORD: "root",
-  DB: "leaderbord",
+  HOST: "195.250.20.169",
+  USER: "mintlabs",
+  PASSWORD: "mintlabs",
+  DB: "aramco",
   dialect: "mysql",
   pool: {
     max: 5,
