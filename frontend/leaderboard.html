@@ -5,31 +5,31 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Form</title>
-<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
     <section class="form-section">
         <div class="form-container">
             <div class="logo">
-                <img src="../img/LOGO.png" alt="">
+                <img src="./img/LOGO.png" alt="">
             </div>
 
             <p class="head leaderboard-head">feel the thrill of team boss</p>
             <div class="form-img">
-                <img src="../img/1.png" alt="">
+                <img src="./img/1.png" alt="">
             </div>
             <div class="form-group leaderboard-button">
-                <button type="submit" id="navigateToDashbord">leaderboard</button>
+                <button type="submit" id="navigateToDashboard">leaderboard</button>
             </div>
         </div>
     </section>
     <script>
-        const navigateToDashbord = document.getElementById("navigateToDashbord");
+        const navigateToDashboard = document.getElementById("navigateToDashboard");
 
-        navigateToDashbord.addEventListener("click", (e) => {
+        navigateToDashboard.addEventListener("click", (e) => {
             e.preventDefault();
-            window.location.href = "http://127.0.0.1:5500/frontend/leaderbord/dashbord.html";
+            window.location.href = "http://127.0.0.1:5500/frontend/dashboard.html";
         })
     </script>
 </body>
