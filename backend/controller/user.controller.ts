@@ -5,14 +5,6 @@ const User = db.user;
 // create a User
 export const addUSer = async (req: Request, res: Response): Promise<void> => {
   try {
-    const existingUser = await User.findOne({ where: { email: req.body.email } });
-    if (existingUser) {
-      res.status(400).send({
-        message: "The email is already in use.",
-      });
-      return;
-    }
-
     const data = await User.create(req.body);
     res.status(201).json(data);
   } catch (error: any) {

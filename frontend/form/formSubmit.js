@@ -5,11 +5,9 @@ const submitBtn = document.getElementById("postSubmit")
 
 let formData;
 
-submitBtn.addEventListener("click", () => {
+formSubmit.addEventListener("submit", (e) => {
+  e.preventDefault();
   formData = new FormData(formSubmit)
-  for (const [name, value] of formData) {
-    console.log(name, ":", value)
-  }
   formSubmit.style.display = "none"
   laptime.style.display = "block"
 })
