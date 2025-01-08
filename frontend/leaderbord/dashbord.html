@@ -38,8 +38,8 @@
                 return response.json();
             })
             .then(data => {
-                const sortUsers = data.data;
-                // const sortUser = data.data.sort((a, b) => b.score - a.score)
+                const sortUsers = data.data.sort((a, b) => a.laptime > b.laptime ? -1 : 1);
+
                 sortUsers.forEach((user, i) => {
                     const row = document.createElement('div');
                     row.classList.add("player");
@@ -47,13 +47,16 @@
                         <div>${i + 1}</div>
                         <div>${user.username}</div>
                         <div>${new Date(user.createdAt).toLocaleDateString()}</div>
-                        <div>11:11:00</div>
+                        <div>${user.laptime}</div>
                     `;
                     players.appendChild(row);
                 });
             })
             .catch(error => {
                 console.error('There was a problem with the fetch operation:', error);
+                // const errorMessage = document.createElement('tr');
+                // errorMessage.innerHTML = `<td colspan="3" style="text-align: center; color: red;">Failed to load data</td>`;
+                // tbody.appendChild(errorMessage);
             });
 
     </script>
