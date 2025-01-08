@@ -80,6 +80,7 @@ body {
   border-radius: 25px;
   background: transparent;
   color: white;
+  text-align: center;
 }
 .form-group input::placeholder {
   color: white;
@@ -92,6 +93,20 @@ body {
   outline: none;
 }
 
+.email-inp {
+  display: flex;
+  flex-direction: column;
+}
+
+.email-inp small {
+  margin-top: 3px;
+  width: 100%;
+  text-align: start;
+  font-weight: 200 !important;
+  font-size: 11px !important;
+  padding-left: 15px;
+  letter-spacing: 0.8px;
+}
 .form-group button {
   padding: 5px 20px;
   background-color: rgb(10, 124, 106);
