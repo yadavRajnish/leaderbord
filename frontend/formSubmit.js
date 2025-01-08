@@ -41,7 +41,7 @@ laptime.addEventListener("submit", async function (e) {
     }
     const result = await response.json();
 
-    window.alert("User added successfully!");
+    window.alert("Awesome! Race Again!");
     formSubmit.reset();
     emailError.style.display = "none";
     window.location.reload();

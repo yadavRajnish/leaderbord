@@ -4,7 +4,7 @@
 <link>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Form</title>
+<title>Feel The Thrill of Team Boss | Aramco Formula One Team</title>
 <link rel="stylesheet" href="./style.css">
 </head>
 
@@ -24,7 +24,9 @@
                     <small class="email-err" style="display: none; color: red;">The email is already in use!</small>
                 </div>
                 <div class="form-group">
-                    <input type="tel" id="phone" name="phone" placeholder="phone" required>
+                    <input type="text" id="phone" name="phone" placeholder="phone" pattern="^[0-9]{10}$"
+                        oninvalid="this.setCustomValidity('Enter a Valid Phone Number')"
+                        onchange="try{setCustomValidity('')}catch(e){}" oninput="setCustomValidity(' ')" required>
                 </div>
                 <div class="form-group">
                     <button type="submit" id="postSubmit" href>Race now</button>
@@ -33,24 +35,24 @@
             <form style="display: none;" id="laptime">
                 <div class="laptime-container">
                     <div class="time-input">
-                        <input autofocus type="number" step="1" name="min" value="0" required data-type="time"
-                            style="color: transparent;">
+                        <input size="2" maxlength="2" max="99" min="0" autofocus type="text" step="1" name="min"
+                            value="0" required data-type="time" style="color: transparent;">
                         <label
                             style="position: absolute; inset: 0; color: white; text-align: center; pointer-events: none;"
                             for="min">00</label>
                     </div>
                     <span>:</span>
                     <div class="time-input">
-                        <input autofocus type="number" step="1" name="sec" value="0" required data-type="time"
-                            style="color: transparent;">
+                        <input size="2" maxlength="2" max="99" min="0" autofocus type="text" step="1" name="sec"
+                            value="0" required data-type="time" style="color: transparent;">
                         <label
                             style="position: absolute; inset: 0; color: white; text-align: center; pointer-events: none;"
                             for="sec">00</label>
                     </div>
                     <span>:</span>
                     <div class="time-input">
-                        <input autofocus type="number" step="1" name="ms" value="0" required data-type="time"
-                            style="color: transparent;" data-pad-length="3">
+                        <input size="3" maxlength="3" max="999" min="0" autofocus type="text" step="1" name="ms"
+                            value="0" required data-type="time" style="color: transparent;" data-pad-length="3">
                         <label
                             style="position: absolute; inset: 0; color: white; text-align: center; pointer-events: none;"
                             for="ms">00</label>
