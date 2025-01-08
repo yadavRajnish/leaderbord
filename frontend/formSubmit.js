@@ -22,7 +22,7 @@ laptime.addEventListener("submit", async function (e) {
 
   try {
     const response = await fetch(
-      "http://195.250.20.169:3000/api/user/add-user",
+      "https://195.250.20.169:3000/api/user/add-user",
       {
         method: "POST",
         headers: {
@@ -45,7 +45,6 @@ laptime.addEventListener("submit", async function (e) {
     formSubmit.reset();
     emailError.style.display = "none";
     window.location.reload();
-    // window.location.href = "http://127.0.0.1:5500/frontend/form/laptime.html";
 
     console.log(result);
   } catch (error) {
