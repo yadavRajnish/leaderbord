@@ -1,6 +1,7 @@
 import dbConfig from "../config/db.config";
 import { Sequelize, DataTypes, Dialect } from "sequelize";
 import initUserModel from "./user.model";
+import initGameModel from "./game.model";
 
 if (!dbConfig.DB || !dbConfig.USER) {
   throw new Error("Specify DB Credentials")
@@ -27,13 +28,19 @@ sequelize
     console.error("Unable to connect to the database:", err);
   });
 
-const db: {
+export const db: {
   Sequelize: typeof Sequelize;
   sequelize: Sequelize;
   user: ReturnType<typeof initUserModel>
-} = { Sequelize, sequelize, user: initUserModel(sequelize) };
+  game: ReturnType<typeof initGameModel>
+} = {
+  Sequelize, sequelize, user: initUserModel(sequelize),
+  game: initGameModel(sequelize)
+};
 
-db.sequelize.sync({ force: false, alter: false }).then(() => {
+// db.game.belongsTo(db.user)
+
+db.sequelize.sync({ force: false, alter: true }).then(() => {
   console.log("re-sync database!");
 });
 
