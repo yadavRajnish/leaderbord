@@ -14,8 +14,8 @@
             <div class="logo">
                 <img src="../img/LOGO.png" alt="">
             </div>
-            <p class="head">feel the thrill of team boss</p>
             <form id="submitForm">
+                <p class="head">feel the thrill of team boss</p>
                 <div class="form-group">
                     <input type="text" id="username" name="username" placeholder="name" required>
                 </div>
@@ -27,7 +27,19 @@
                     <input type="tel" id="phone" name="phone" placeholder="phone" required>
                 </div>
                 <div class="form-group">
-                    <button type="submit" id="postSubmit" href>Race now</button>
+                    <button type="button" id="postSubmit" href>Race now</button>
+                </div>
+            </form>
+            <form style="display: none;" id="laptime">
+                <div class="laptime-container">
+                    <input type="number" step="1" id="laptime" name="min" placeholder="MM" required>
+                    <span>:</span>
+                    <input type="number" step="1" id="laptime" name="sec" placeholder="SS" required>
+                    <span>:</span>
+                    <input type="number" step="1" id="laptime" name="ms" placeholder="MS" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit" id="postSubmit">submit</button>
                 </div>
             </form>
             <div class="form-img">

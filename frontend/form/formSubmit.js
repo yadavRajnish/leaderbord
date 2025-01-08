@@ -1,9 +1,26 @@
 const formSubmit = document.getElementById("submitForm");
+const laptime = document.getElementById("laptime");
 const emailError = document.querySelector(".email-err");
+const submitBtn = document.getElementById("postSubmit")
 
-formSubmit.addEventListener("submit", async function (e) {
+let formData;
+
+submitBtn.addEventListener("click", () => {
+  formData = new FormData(formSubmit)
+  for (const [name, value] of formData) {
+    console.log(name, ":", value)
+  }
+  formSubmit.style.display = "none"
+  laptime.style.display = "block"
+})
+
+
+
+laptime.addEventListener("submit", async function (e) {
   e.preventDefault();
-  const formData = new FormData(formSubmit).entries();
+  const data = new FormData(laptime)
+  const time = data.get("min") + ":" + data.get("sec") + ":" + data.get("ms");
+  formData.append("laptime", time);
 
   try {
     const response = await fetch(
@@ -29,7 +46,8 @@ formSubmit.addEventListener("submit", async function (e) {
     window.alert("User added successfully!");
     formSubmit.reset();
     emailError.style.display = "none";
-    window.location.href = "http://127.0.0.1:5500/frontend/form/laptime.html";
+    window.location.reload();
+    // window.location.href = "http://127.0.0.1:5500/frontend/form/laptime.html";
 
     console.log(result);
   } catch (error) {
