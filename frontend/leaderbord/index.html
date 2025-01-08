@@ -9,25 +9,26 @@
 </head>
 
 <body>
-    <div class="dashboard-container">
-        <h2>User Dashboard</h2>
-        <div class="table-wrapper">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Username</th>
-                        <th>Score</th>
-                        <th>Email</th>
-                    </tr>
-                </thead>
-                <tbody id="user-data" class="table-body"></tbody>
-            </table>
+    <section class="dashboard-section">
+        <div class="dashboard-container">
+            <div class="logo">
+                <img src="../img/LOGO.png" alt="">
+            </div>
+
+            <div id="players" class="players">
+                <div class="player">
+                    <div>Pos</div>
+                    <div>Name</div>
+                    <div>Date</div>
+                    <div>Laptime</div>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
 
     <script>
-        const api = 'http://localhost:3000/api/user/get-all-users';
-        const tbody = document.getElementById('user-data');
+        const api = 'http://195.250.20.169:3000/api/user/get-all-users';
+        const players = document.getElementById('players');
 
         fetch(api)
             .then(response => {
@@ -37,22 +38,25 @@
                 return response.json();
             })
             .then(data => {
-                const sortUser = data.data.sort((a, b) => b.score - a.score)
-                sortUser.forEach(user => {
-                    const row = document.createElement('tr');
+                const sortUsers = data.data;
+                // const sortUser = data.data.sort((a, b) => b.score - a.score)
+                sortUsers.forEach((user, i) => {
+                    const row = document.createElement('div');
+                    row.classList.add("player");
                     row.innerHTML = `
-                        <td>${user.username || 'N/A'}</td>
-                        <td>${user.score || 'N/A'}</td>
-                        <td>${user.email || 'N/A'}</td>
+                        <div>${i + 1}</div>
+                        <div>${user.username}</div>
+                        <div>${new Date(user.createdAt).toLocaleDateString()}</div>
+                        <div>11:11:00</div>
                     `;
-                    tbody.appendChild(row);
+                    players.appendChild(row);
                 });
             })
             .catch(error => {
                 console.error('There was a problem with the fetch operation:', error);
-                const errorMessage = document.createElement('tr');
-                errorMessage.innerHTML = `<td colspan="3" style="text-align: center; color: red;">Failed to load data</td>`;
-                tbody.appendChild(errorMessage);
+                // const errorMessage = document.createElement('tr');
+                // errorMessage.innerHTML = `<td colspan="3" style="text-align: center; color: red;">Failed to load data</td>`;
+                // tbody.appendChild(errorMessage);
             });
 
     </script>

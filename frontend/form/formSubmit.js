@@ -6,7 +6,7 @@ formSubmit.addEventListener("submit", async function (e) {
   const formData = new FormData(formSubmit).entries();
 
   try {
-    const response = await fetch("http://localhost:3000/api/user/add-user", {
+    const response = await fetch("http://195.250.20.169:3000/api/user/add-user", {
       method: "POST",
       headers: {
         "Content-type": "application/json",
