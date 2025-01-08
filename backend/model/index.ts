@@ -35,7 +35,7 @@ export const db: {
   Sequelize, sequelize, user: initUserModel(sequelize),
 };
 
-db.sequelize.sync({ force: false, alter: true }).then(() => {
+db.sequelize.sync({ force: false, alter: false }).then(() => {
   console.log("re-sync database!");
 });
 
