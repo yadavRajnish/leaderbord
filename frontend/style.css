@@ -35,7 +35,7 @@ body {
 .form-container {
   border-radius: 10px;
   width: 100%;
-  max-width: min(320px, 70vw);
+  max-width: min(360px, 70vw);
 }
 
 .logo {
@@ -163,7 +163,7 @@ body {
 
 .dashboard-container {
   margin: 0 auto;
-  max-width: min(320px, 70vw);
+  max-width: min(360px, 70vw);
 }
 
 .players {
@@ -181,9 +181,10 @@ body {
   /* justify-content: space-between; */
   padding: 10px;
   background: rgb(var(--primary));
-  text-align: center;
+  text-align: left;
   border-radius: 0.5rem;
   color: white;
+  gap: 10px;
 }
 
 .player:first-child {
@@ -193,7 +194,7 @@ body {
 }
 
 .player>div {
-  width: calc((100% - 3rem) / 3);
+  width: calc((100% - 3rem - 30px) / 3);
 }
 
 .player *:first-child {
@@ -203,6 +204,7 @@ body {
   height: 3rem;
   line-height: 3rem;
   border-radius: 0.5rem;
+  text-align: center;
 }
 
 h2 {
