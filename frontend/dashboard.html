@@ -38,7 +38,7 @@
                 return response.json();
             })
             .then(data => {
-                const sortUsers = data.data.sort((a, b) => a.laptime > b.laptime ? -1 : 1);
+                const sortUsers = data.data.sort((a, b) => a.laptime > b.laptime ? 1 : -1);
 
                 sortUsers.forEach((user, i) => {
                     const row = document.createElement('div');
