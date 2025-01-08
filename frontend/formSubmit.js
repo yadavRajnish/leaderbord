@@ -22,7 +22,7 @@ laptime.addEventListener("submit", async function (e) {
 
   try {
     const response = await fetch(
-      "https://195.250.20.169:3000/api/user/add-user",
+      "https://195.250.20.169:3000/aramco/api/user/add-user",
       {
         method: "POST",
         headers: {
