@@ -17,7 +17,7 @@ formSubmit.addEventListener("submit", (e) => {
 laptime.addEventListener("submit", async function (e) {
   e.preventDefault();
   const data = new FormData(laptime)
-  const time = data.get("min") + ":" + data.get("sec") + ":" + data.get("ms");
+  const time = data.get("min").padStart(2, 0) + ":" + data.get("sec").padStart(2, 0) + ":" + data.get("ms").padStart(3, 0);
   formData.append("laptime", time);
 
   try {
