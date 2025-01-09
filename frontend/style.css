@@ -2,10 +2,37 @@
   --primary: 10, 124, 106;
 }
 
+@font-face {
+  font-family: avertaPE;
+  src: url("./font/AvertaDemoPE-Regular.otf");
+}
+
+@font-face {
+  font-family: averta;
+  src: url("./font/AvertaDemo-Regular.otf");
+}
+
+@font-face {
+  font-family: avertaPeCutted;
+  src: url("./font/AvertaDemoPECuttedDemo-Regular.otf");
+}
+@font-face {
+  font-family: avertaExtraBold;
+  src: url("./font/AvertaExtraBold.ttf");
+}
+@font-face {
+  font-family: avertaDemoExtraItalic;
+  src: url("./font/AvertaDemo-ExtraBoldItalic.otf");
+}
+@font-face {
+  font-family: avertaDemoExtraBold;
+  src: url("./font/AvertaDemoPE-ExtraBold.otf");
+}
+
 * {
   padding: 0;
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: avertaPE;
   box-sizing: border-box;
 }
 
