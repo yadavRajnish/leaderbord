@@ -17,9 +17,9 @@
 
             <div id="players" class="players">
                 <div class="player">
-                    <div>Pos</div>
+                    <div>POS</div>
                     <div>Name</div>
-                    <div>Date</div>
+                    <div>Date & Time</div>
                     <div>Laptime</div>
                 </div>
             </div>
@@ -59,10 +59,12 @@
                 const sortUsers = data.data.sort((a, b) => a.laptime > b.laptime ? 1 : -1);
 
                 sortUsers.forEach((user, i) => {
+                    const dt = new Date(user.createdAt)
+                    const date = `${(dt.getFullYear())}-${(dt.getMonth() + 1)}-${(dt.getDate())} ${(dt.getHours())}:${(dt.getMinutes())}`;
                     leaderboardData.push({
                         Pos: i + 1,
                         Name: user.name,
-                        Date: new Date(user.createdAt).toLocaleDateString(),
+                        Date: date,
                         Laptime: user.laptime,
                     });
                     const row = document.createElement('div');
@@ -70,7 +72,7 @@
                     row.innerHTML = `
                         <div>${i + 1}</div>
                         <div>${user.name}</div>
-                        <div>${new Date(user.createdAt).toLocaleDateString()}</div>
+                        <div>${date}</div>
                         <div>${user.laptime}</div>
                     `;
                     players.appendChild(row);
