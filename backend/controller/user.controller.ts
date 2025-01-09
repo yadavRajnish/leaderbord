@@ -17,10 +17,9 @@ export const addUSer = async (req: Request, res: Response): Promise<void> => {
 //get all the users
 export const getAllUsers = async (req: Request, res: Response): Promise<void> => {
   try {
-    const data = await User.findAll();
+    const data = await User.findAll({ limit: 10, order: [["laptime", "ASC"]] });
     res.status(200).json({
-      // @ts-ignore
-      data: data.sort((a, b) => a.laptime > b.laptime ? 1 : -1).slice(0, 10),
+      data: data,
       message: "User retrieved successfully",
     });
   } catch (error: any) {

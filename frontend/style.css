@@ -35,7 +35,7 @@ body {
 .form-container {
   border-radius: 10px;
   width: 100%;
-  max-width: min(360px, 70vw);
+  max-width: min(360px, 90vw);
 }
 
 .logo {
@@ -163,7 +163,7 @@ body {
 
 .dashboard-container {
   margin: 0 auto;
-  max-width: min(360px, 70vw);
+  max-width: min(360px, 90vw);
 }
 
 .players {
@@ -185,6 +185,7 @@ body {
   border-radius: 0.5rem;
   color: white;
   gap: 10px;
+  overflow: auto;
 }
 
 .player:first-child {
@@ -195,6 +196,7 @@ body {
 
 .player > div {
   width: calc((100% - 3rem - 30px) / 3);
+  text-wrap: no-wrap;
 }
 
 .player *:first-child {
