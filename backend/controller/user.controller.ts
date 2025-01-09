@@ -45,15 +45,8 @@ export const getAllUserToCSV = async (req: Request, res: Response): Promise<void
     csvRows.push(header.join(','));
 
     data.forEach((user: any) => {
-      const row = [
-        user.name,
-        user.phone,
-        user.email,
-        user.laptime,
-        user.createdAt,
-        user.updatedAt
-      ];
-      csvRows.push(row.join(","));
+      const row = `"${user.name}","${user.phone}","${user.email}","-${user.laptime}-","${new Date(user.createdAt).toDateString()}","${new Date(user.updatedAt).toDateString()}"`
+      csvRows.push(row);
     })
 
     const csvContent = csvRows.join("\n")
