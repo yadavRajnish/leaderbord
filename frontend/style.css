@@ -386,7 +386,13 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .export {
-  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  /* position: absolute;
   top: 1%;
-  right: 1%;
+  right: 1%; */
 }
