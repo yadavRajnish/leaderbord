@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import db from "../model/index";
+import userDataToCSV from "../utils/userDataToCSV";
 const User = db.user;
 
 // create a User
@@ -40,16 +41,8 @@ export const getAllUserToCSV = async (req: Request, res: Response): Promise<void
       return;
     }
 
-    const header = ["Name", "Phone", "Email", "Laptime", "Created At", "Updated At"];
-    const csvRows = [];
-    csvRows.push(header.join(','));
+    const csvContent = userDataToCSV(data);
 
-    data.forEach((user: any) => {
-      const row = `"${user.name}","${user.phone}","${user.email}","-${user.laptime}-","${new Date(user.createdAt).toDateString()}","${new Date(user.updatedAt).toDateString()}"`
-      csvRows.push(row);
-    })
-
-    const csvContent = csvRows.join("\n")
     res.setHeader("Content-Type", "text/csv");
     res.setHeader("Content-Disposition", "attachmen ; filename=player.csv")
     res.send(csvContent);
