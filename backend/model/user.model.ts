@@ -28,6 +28,9 @@ export default (sequelize: Sequelize) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
+  }, {
+    paranoid: true,
+    deletedAt: 'destroyTime',
   });
 
   return User;
