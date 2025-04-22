@@ -12,7 +12,7 @@ cron.schedule('0 9 * * *', genUserReport);
 app.use(cors());
 app.use(express.json());
 
-app.use('/public', express.static('public'));
+app.use('/aramco/public', express.static('public'));
 
 app.listen(PORT, () => {
     console.log("Server is running on port 3000");
