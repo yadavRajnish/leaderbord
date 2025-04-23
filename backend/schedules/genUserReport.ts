@@ -18,7 +18,7 @@ export async function genUserReport() {
 
   const today = new Date();
 
-  const yesterday = date.setDate(date.getDate() - 1);
+  const yesterday = today.setDate(today.getDate() - 1);
 
   const filename = yesterday.toISOString().split("T")[0] + ".csv"
 
