@@ -16,7 +16,13 @@ export async function genUserReport() {
    fs.mkdirSync(publicDir);
   }
 
-  const filePath = path.join('public', `${new Date().toISOString().split("T")[0]}.csv`);
+  const today = new Date();
+
+  const yesterday = date.setDate(date.getDate() - 1);
+
+  const filename = yesterday.toISOString().split("T")[0] + ".csv"
+
+  const filePath = path.join('public', filename);
   fs.writeFileSync(filePath, csvContent);
 
   await User.destroy({ where: {}, individualHooks: true });
