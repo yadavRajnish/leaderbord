@@ -16,11 +16,11 @@ export async function genUserReport() {
    fs.mkdirSync(publicDir);
   }
 
-  const today = new Date();
+  const date = new Date();
 
-  const yesterday = today.setDate(today.getDate() - 1);
+  date.setDate(date.getDate() - 1);
 
-  const filename = yesterday.toISOString().split("T")[0] + ".csv"
+  const filename = date.toISOString().split("T")[0] + ".csv"
 
   const filePath = path.join('public', filename);
   fs.writeFileSync(filePath, csvContent);
